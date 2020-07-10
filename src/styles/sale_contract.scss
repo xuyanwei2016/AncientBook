@@ -1,0 +1,76 @@
+.sale_contract{
+  .el-pagination .el-select .el-input .el-input__inner,
+  .el-pagination__editor.el-input .el-input__inner {
+      background: #393f5b;
+      border: 0;
+  }
+  .el-button {
+    background: #03bcd9;
+    border-color: #03bcd9;
+    color: #fff;
+  }
+  .imtips {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/tips.png") no-repeat;
+    margin-right: 3px;
+    float: left;
+  }
+  .add {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/plan_add.png") no-repeat;
+    float: left;
+    margin-right: 5px;
+  }
+  .imExcel {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/plan_excel.png") no-repeat;
+    margin-right: 3px;
+    float: left;
+  }
+  .deleteIcon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/remove.png") no-repeat;
+    margin-right: 3px;
+    float: left;
+  }
+  .importIcon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/importico.png") no-repeat;
+    margin-right: 3px;
+    float: left;
+  }
+  .el-icon-zhexian{
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/zhexiantu.png") no-repeat;
+  }
+  .flex{
+    display: flex;
+  }
+  .flex_child{
+    flex:1
+  }
+  .detile_wrap{
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #DCDFE6;
+  }
+  .table_row{
+    flex:1;
+    &:first-child{
+      .table_column{
+         border-left: 1px solid #EBEEF5;
+      }
+    }
+  }
+}

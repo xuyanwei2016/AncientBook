@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="lib/esl.js"></script>
+    <script src="lib/config.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/facePrint.js"></script>
+    <script src="lib/testHelper.js"></script>
+    <link rel="stylesheet" href="lib/reset.css" />
+</head>
+
+<body>
+    <style>
+        .test-title {
+            background: #fff;
+            color: #333;
+        }
+    </style>
+
+
+    <div id="main0"></div>
+
+
+    <script>
+        var chart;
+        var myChart;
+        var option;
+
+        require([
+            'echarts' /*, 'map/js/china' */
+        ], function(echarts) {
+
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {
+                            show: true,
+                            readOnly: false
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['line', 'bar']
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['直接访问', '百度搜索', '谷歌搜索', '360搜索', '直接访问'],
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    name: '',
+                    min: 0,
+                    max: 5000,
+                    interval: 1000,
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }],
+                series: [{
+                    name: '访问次数',
+                    type: 'bar',
+                    data: [3789, 3007, 423, 312, 25]
+                }, {
+                    name: '访客数',
+                    type: 'bar',
+                    data: [2884, 2310, 327, 305, 88]
+                }, {
+                    name: '独立ip',
+                    type: 'bar',
+                    data: [2771, 2228, 325, 226, 105]
+                }]
+            };
+
+            chart = myChart = testHelper.create(echarts, 'main0', {
+                option: option,
+                title: '来源分析'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

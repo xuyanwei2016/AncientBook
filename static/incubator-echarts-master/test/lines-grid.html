@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="lib/esl.js"></script>
+    <script src="lib/config.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/facePrint.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="lib/reset.css">
+</head>
+
+<body>
+    <style>
+        #main {
+            height: 500px;
+        }
+    </style>
+    <div id="main"></div>
+    <div>
+        <table>
+            <tr>
+                <td style="border:solid 1px #ccc;">时间</td>
+                <td style="border:solid 1px #ccc;">独立ip</td>
+                <td style="border:solid 1px #ccc;">比例</td>
+                <td style="border:solid 1px #ccc;">访问次数</td>
+                <td style="border:solid 1px #ccc;">比例</td>
+                <td style="border:solid 1px #ccc;">浏览量</td>
+                <td style="border:solid 1px #ccc;">比例</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 00时</td>
+                <td style="border:solid 1px #ccc;">11万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">1万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 01时</td>
+                <td style="border:solid 1px #ccc;">11万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">5万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 02时</td>
+                <td style="border:solid 1px #ccc;">15万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">3万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 03时</td>
+                <td style="border:solid 1px #ccc;">13万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">2万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 04时</td>
+                <td style="border:solid 1px #ccc;">12万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">1.5万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 05时</td>
+                <td style="border:solid 1px #ccc;">13万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">1.5万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+            <tr>
+                <td style="border:solid 1px #ccc;">2019-02-28 06时</td>
+                <td style="border:solid 1px #ccc;">10万</td>
+                <td style="border:solid 1px #ccc;">88%</td>
+                <td style="border:solid 1px #ccc;">6万</td>
+                <td style="border:solid 1px #ccc;">10%</td>
+                <td style="border:solid 1px #ccc;">1.5万</td>
+                <td style="border:solid 1px #ccc;">2%</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var echarts;
+        var colorTool;
+        var chart;
+        var myChart;
+        var groupCategories = [];
+        var groupColors = [];
+
+        require([
+            'echarts'
+        ], function(ec, ct) {
+            echarts = ec;
+            colorTool = echarts.color;
+            chart = myChart = echarts.init(document.getElementById('main'));
+
+            var json = {
+                chart0: {
+                    text: '今日时段分析',
+                    legend: [
+                        ['独立ip', '访问次数', '浏览量'],
+                        ['A', 'B', 'C']
+                    ],
+                    xcategory: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'],
+                    high: [11, 11, 15, 13, 12, 13, 10],
+                    highLine: [],
+                    low: [1, 5, 2, 5, 3, 2, 1.5],
+                    lowLine: [],
+                    avg: []
+                }
+            };
+
+            var zrUtil = echarts.util;
+            var zrVector = echarts.vector;
+            var zrMatrix = echarts.matrix;
+            var zrNumber = echarts.number;
+            var zrFormat = echarts.format;
+            var zrGraphic = echarts.graphic;
+
+            zrUtil.each(json.chart0.xcategory, function(item, index) {
+                json.chart0.highLine.push([{
+                    coord: [index, json.chart0.high[index]]
+                }, {
+                    coord: [index + 1, json.chart0.high[index + 1]]
+                }]);
+            });
+            zrUtil.each(json.chart0.xcategory, function(item, index) {
+                json.chart0.lowLine.push([{
+                    coord: [index, json.chart0.low[index]]
+                }, {
+                    coord: [index + 1, json.chart0.low[index + 1]]
+                }]);
+            });
+            zrUtil.each(json.chart0.high, function(item, index) {
+                json.chart0.avg.push((json.chart0.low[index] + json.chart0.high[index]) / 2);
+            });
+
+            var option = {
+                title: {
+                    text: json.chart0.text,
+                    subtext: json.chart0.subtext
+                },
+                animationEasing: 'ElasticOut',
+                legend: [{
+                    data: json.chart0.legend[0]
+                }, {
+                    data: json.chart0.legend[0]
+                }, {
+                    data: json.chart0.legend[1],
+                }],
+                calculable: true,
+                xAxis: [{
+                    type: 'category',
+                    axisLabel: {
+                        formatter: function(value) {
+
+                            var sepCount = 1; //每几个字符分隔
+
+                            return value.replace(/(\S{1})(?=[^$])/g, "$1\n\n")
+                        }
+                    },
+                    boundaryGap: false,
+                    data: json.chart0.xcategory
+                }],
+                yAxis: [{
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value}万 '
+                    }
+                }],
+                series: [{
+                    name: '最高气温',
+                    type: 'line',
+                    data: json.chart0.high
+                }, {
+                    name: '最低气温',
+                    type: 'line',
+                    data: json.chart0.low
+                }, {
+                    name: '平均气温',
+                    type: 'line',
+                    data: json.chart0.avg
+                }, {
+                    name: 'A',
+                    type: 'lines',
+                    coordinateSystem: 'cartesian2d',
+                    zlevel: 2,
+                    effect: {
+                        show: true,
+                        smooth: false,
+                        period: 6,
+                        symbolSize: 8
+                    },
+                    data: json.chart0.highLine
+                }, {
+                    name: 'B',
+                    type: 'lines',
+                    coordinateSystem: 'cartesian2d',
+                    zlevel: 2,
+                    effect: {
+                        show: true,
+                        smooth: false,
+                        period: 6,
+                        symbolSize: 8
+                    },
+                    data: json.chart0.lowLine
+                }]
+            };
+
+            chart.setOption(option);
+        });
+    </script>
+</body>
+
+</html>

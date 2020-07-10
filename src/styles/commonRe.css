@@ -1,0 +1,173 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+.newBookView .el-form-item__content{
+  display: flex;
+  justify-content: flex-start;
+}
+.newBookView .uploadCss .el-form-item__content{
+  display: block !important;
+}
+.newBookView .el-form-item__content .el-input{
+  width: 77%;
+  margin-right:6px;
+
+}
+.contractView .formbox .tabwrapper1 .el-input,.contractLook .formbox .tabwrapper1 .el-input{
+  /*width: 400px;*/
+}
+.contractView .tabwrapperTable .tableCss .el-form-item__content{
+  width: 90%;
+  padding-left: 5%;
+  float: left;
+  display: block;
+}
+.subjectView .el-form-item--medium .el-form-item__label{
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  justify-content: flex-end;
+}
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor .el-form-item__content,.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor .el-form-item__content{
+  display: flex;
+  flex-direction: column;
+}
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor,.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor{
+  position: relative;
+}
+.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor .el-form-item__content .authorList{
+  width: 70%;
+
+}
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor .authorList .tip,.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor .authorList .tip{
+  color: #F56C6C;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor .el-icon-circle-plus,.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor .el-icon-circle-plus{ position: absolute;right: 12%;top:0;}
+
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor label,.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor label{position: relative;display: flex; justify-content: flex-end}
+.newBookView .demo-ruleForm .tabwrapper1 .seriesAuthor label:before{
+  content: '*';
+  /*position: absolute;
+  left: 0;
+  top:0;*/
+  color:#F56C6C; font-size: 12px;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 5px;
+}
+.cipView .demo-ruleForm .tabwrapper1 .seriesAuthor label:before{
+  content: '*';
+  /*position: absolute;
+  left: 0;
+  top:0;*/
+  color:#F56C6C; font-size: 12px;
+  height: 44px;
+  line-height: 20px;
+  padding-left: 7px;
+}
+.newBookView .demo-ruleForm .peopleFrom label{position: relative;display: flex; justify-content: flex-end}
+.newBookView .demo-ruleForm .peopleFrom label:before{
+  content: '*';
+  /*position: absolute;
+  left: 0;
+  top:0;*/
+  color:#F56C6C; font-size: 12px;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 5px;
+}
+.newBookView .demo-ruleForm .peopleFrom .el-form-item__content{
+  display: flex;
+  flex-direction: column;
+}
+.newBookView .demo-ruleForm .peopleFrom .el-form-item__content .tip{color: #F56C6C;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;}
+.newBookView .demo-ruleForm .peopleFrom .el-form-item__content .select input{
+  border-color: #F56C6C;
+}
+.redBorder .el-input:first-child input{
+  border-color: #F56C6C;
+}
+.addImgResource .demo-ruleForm .buttonS .el-form-item__content{
+  display: flex;
+  justify-content: center;
+  margin-left: 0 !important;
+}
+
+
+.xywCss .avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.xywCss .dutyEditor .el-form-item__content{
+  display: flex;
+  flex-direction:column;
+}
+
+
+.xywCss .avatar-uploader .el-upload:hover {
+  border-color: #409eff;
+}
+
+.xywCss .avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px;
+  text-align: center;
+}
+
+.xywCss .avatar {
+  width: 178px;
+  height: 178px;
+  display: block;
+}
+.newBookView .tabwrapper2 .el-form-item__content{
+  display: flex;
+  justify-content: center;
+}
+
+.newBookView .demo-ruleForm .tabwrapperTable .content .el-form-item__content{
+  margin-left: 60px!important;
+}
+.newBookView .demo-ruleForm .tabwrapperTable .content .el-form-item__content .el-table {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  color: #606266;
+  display: block;
+  flex: none;
+}
+.xywCss .el-upload__tip{color: #ccc}
+.newBookView .el-form-item.width3601{
+  width: 45%;
+}
+.cipView.xywCss .tabwrapper1 .content  .el-form-item__label{width:100%; text-align: left!important;
+  display: flex;justify-content: flex-start!important;}
+
+.addImgResource.contractView .el-date-editor.el-input{
+  width:100%;
+}
+.xywCss .labelLine label{line-height: 20px !important;}
+
+

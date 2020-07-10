@@ -1,0 +1,82 @@
+.count_manage{
+  &.bg_white{
+    background: #fff;
+  }
+  .el-pagination .el-select .el-input .el-input__inner,
+  .el-pagination__editor.el-input .el-input__inner {
+      background: #393f5b;
+      border: 0;
+  }
+  .el-icon-zhexian{
+    width: 14px;
+    height: 14px;
+    background: url("../assets/img/zhexiantu.png") no-repeat;
+  }
+  .table_custom{
+    background: #fff;
+    padding: 10px;
+  }
+  .flex{
+    display: flex;
+  }
+  .flex_child{
+    flex:1
+  }
+  .detile_wrap{
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #DCDFE6;
+  }
+  .table_row{
+    flex:1;
+    &:first-child{
+      .table_column{
+         border-left: 1px solid #EBEEF5;
+      }
+    }
+  }
+  .pagination-container {
+    margin-top: 0px !important;
+    padding:0px !important;
+    .prfooterright{
+      padding:0px !important;
+    }
+  }
+  .table_column{
+    padding: 12px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    min-height: 48px;
+    border-bottom: 1px solid #EBEEF5;
+    
+    &:not(:first-child){
+      border-right: 1px solid #ebeef5;
+    }
+    &:first-child{
+      background-color: #f5f7fa
+    }
+    .cell{
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      word-break: break-all;
+      line-height: 23px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .fontS{
+      color: #00A694
+    }
+  }
+  .backmoney{
+      background-color: #deebf6;
+  }
+  .notback{
+    background-color: #fff2cc;
+  }
+}
